@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
+// rotta pagine statiche
+Route::get('/', 'PagesController@home')->name('home');
+Route::get('/contact', 'PagesController@contact')->name('contact');
