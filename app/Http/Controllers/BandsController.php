@@ -59,9 +59,9 @@ class BandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Band $band)
     {
-        
+        return view('bands.edit', compact('band'));
     }
 
     /**
@@ -71,9 +71,11 @@ class BandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Band $band)
     {
-        //
+        $data=$request->all();
+        $band->update($data);
+        return redirect()->route('bands.show', $band)->with('message', 'Hai aggiornato con successo');
     }
 
     /**

@@ -3,6 +3,11 @@
 @section('content')
 
 <div class="container">
+    @if(session('message'))
+    <div class="alert alert-success">
+     {{session('message')}}   
+    </div>
+    @endif
     <div class="col text-center">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
