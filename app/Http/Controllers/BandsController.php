@@ -24,7 +24,7 @@ class BandsController extends Controller
      */
     public function create()
     {
-        //
+        return view('bands.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class BandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $new_band= new Band();
+        $new_band->fill($data);
+        $new_band->save();
+        return redirect()->route('bands.show', $new_band);
     }
 
     /**
@@ -44,9 +48,9 @@ class BandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Band $band)
     {
-        //
+        return view('bands.show', compact('band'));
     }
 
     /**
@@ -57,7 +61,7 @@ class BandsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

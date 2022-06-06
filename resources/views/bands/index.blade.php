@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row mt-5">
+     <a href=" {{route('bands.create')}}" class="btn btn-primary">crea una nuona band</a>   
         @forelse($bands as $band)
         <div class="col text-center">
             <div class="card" style="width: 18rem;">
@@ -13,7 +14,7 @@
                     <p class="card-text">{{$band->canzone}}</p>
                     <p class="card-text">{{$band->codice_voto}}</p>
                     <p class="card-text">{{$band->nazionalità}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href=" {{route('bands.show', $band->id)}} " class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
