@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 // rotta pagine statiche
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/contact', 'PagesController@contact')->name('contact');
+// pagine dimaniche
+Route::resource('bands', 'BandsController');

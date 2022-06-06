@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bands</a>
+            <a class="nav-link" href=" {{route('bands.index')}} ">Bands</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('contact')}}"">Contatti</a>

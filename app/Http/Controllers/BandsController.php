@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class BandsConroller extends Controller
+use App\Models\Band;
+class BandsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class BandsConroller extends Controller
      */
     public function index()
     {
-        return view('partial.home');
+        $bands= Band::all();
+        return view('bands.index', compact('bands'));
     }
 
     /**
@@ -23,7 +24,7 @@ class BandsConroller extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
